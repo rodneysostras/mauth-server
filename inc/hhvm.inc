@@ -24,8 +24,8 @@ yum install {fribidi,libc-client,glib2}-devel -y
 
 # Get our hhvm
 cd
-git clone https://github.com/facebook/hhvm -b master  hhvm  --recursive
-cd hhvm
+tar -xzf $HOME/mauth-server/source/hhvm-master.zip
+cd hhvm-master
 
 # Okay let's go
 cmake3 .
@@ -38,9 +38,5 @@ make install
 # Final
 hhvm --version
 
-wget https://github.com/hhvm/packaging/raw/master/hhvm/deb/skeleton/etc/init.d/hhvm -O /etc/init.d/hhvm
-
 sudo chmod +x /etc/init.d/hhvm
-
-#hhvm -m daemon -c /etc/hhvm/server.ini -d hhvm.server.type=fastcgi -d hhvm.server.port=9000
 }
