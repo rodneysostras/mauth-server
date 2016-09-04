@@ -15,7 +15,7 @@ source "inc/fail2ban.inc"
 source "inc/cfs.inc"
 source "inc/nginx.inc"
 source "inc/hhvm.inc"
-source "inc/pptp.inc"
+#source "inc/pptp.inc"
 
 epel
 update
@@ -23,4 +23,4 @@ fail2ban
 cfs
 nginx
 hhvm
-pptp
+#pptp
