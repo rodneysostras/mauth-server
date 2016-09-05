@@ -30,7 +30,7 @@ test -x /usr/local/bin/hhvm || exit 1
 start() {
     echo -n $"Starting $prog: "
  
-    daemon --pidfile ${pidfile} ${hhvm} --config /etc/hhvm/server.ini --mode daemon
+    daemon --pidfile ${pidfile} ${hhvm} --config /etc/hhvm/server.ini --config /etc/hhvm/php.ini --config /etc/hhvm/config.hdf --mode daemon
     RETVAL=$?
     echo
     [ $RETVAL = 0 ] && touch ${lockfile}
@@ -74,3 +74,4 @@ case "$1" in
 esac
  
 exit $RETVAL
+
